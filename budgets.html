@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Rules | FinSmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SAAS Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">📊 FinSmart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="expenses.html">💳 Expenses</a></li>
+                <li><a href="budgets.html" class="active">💰 Budget Rules</a></li>
+                <li><a href="goals.html">🎯 Goals</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Budget & Recommendations</h1>
+                <p>Monitor your category limits and review automated adjustments.</p>
+            </div>
+
+            <div class="grid-2">
+                <!-- Progress Bars Section -->
+                <div class="card">
+                    <h3>Category Tracking</h3>
+                    <div id="budget-progress-list">
+                        <!-- JS will inject progress bars here -->
+                    </div>
+                </div>
+
+                <!-- Recommendation Engine Section -->
+                <div class="card">
+                    <h3>⚙️ Smart Recommendations</h3>
+                    <div id="recommendations-container">
+                        <!-- JS will inject rule-based advice here -->
+                    </div>
+                </div>
+            </div>
+
+            <section class="budget-coach card" aria-labelledby="budget-coach-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Personalized budget coach</p>
+                        <h2 id="budget-coach-title">What can you comfortably decrease?</h2>
+                    </div>
+                    <span id="potential-savings" class="savings-pill">Potential savings: ₹0/mo</span>
+                </div>
+                <p class="coach-intro">Pick the expenses you are ready to reduce. We will use them to highlight a budget style that fits you—without changing your limits automatically.</p>
+                <div id="expense-reduction-list" class="reduction-list"></div>
+
+                <div class="plan-heading">
+                    <div>
+                        <p class="eyebrow">Choose your style</p>
+                        <h2>Five budget plans to try</h2>
+                    </div>
+                    <p id="plan-selection-status" class="selection-status" aria-live="polite"></p>
+                </div>
+                <div id="budget-plan-list" class="plan-grid"></div>
+            </section>
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

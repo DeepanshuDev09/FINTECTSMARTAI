@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals & Planning | FinSmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SAAS Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">📊 FinSmart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="expenses.html">💳 Expenses</a></li>
+                <li><a href="budgets.html">💰 Budget Rules</a></li>
+                <li><a href="goals.html" class="active">🎯 Goals</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Goals & Planning</h1>
+                <p>Track your savings targets and experiment with your financial habits.</p>
+            </div>
+
+            <div class="grid-2">
+                <!-- Left Column: Savings Goals -->
+                <div class="goals-container">
+                    <div class="card" style="margin-bottom: 24px;">
+                        <h3>Create Savings Goal</h3>
+                        <form id="goal-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: end;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label>Goal Name (e.g. New Phone)</label>
+                                <input type="text" id="goal-name" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label>Target Amount (₹)</label>
+                                <input type="number" id="goal-target" required min="100">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label>Target Time (Months)</label>
+                                <input type="number" id="goal-months" required min="1">
+                            </div>
+                            <button type="submit" class="btn-primary" style="margin-bottom: 0;">Add Goal</button>
+                        </form>
+                    </div>
+
+                    <div id="goals-list">
+                        <!-- JS will inject Goal Cards here -->
+                    </div>
+                </div>
+
+                <!-- Right Column: What-If Calculator -->
+                <div class="card what-if-card">
+                    <h3>🧮 What-If Calculator</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Experiment with your numbers to see future projections.</p>
+                    
+                    <div class="calc-section">
+                        <label>What if I save extra ₹ <input type="number" id="sim-save" class="inline-input" value="500"> per month?</label>
+                        <button class="btn-small btn-reject" onclick="calculateSavings()">Calculate</button>
+                        <div id="sim-save-result" class="sim-result"></div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="calc-section">
+                        <label>What if I reduce my spending by ₹ <input type="number" id="sim-reduce" class="inline-input" value="300"> per month?</label>
+                        <button class="btn-small btn-reject" onclick="calculateReduction()">Calculate</button>
+                    <div id="sim-reduce-result" class="sim-result"></div>
+                    </div>
+
+                    <hr class="divider">
+                    <div class="calc-section">
+                        <h4>Transfer to a savings goal</h4>
+                        <p>Transfers count against your available monthly balance.</p>
+                        <select id="transfer-goal"></select>
+                        <input type="number" id="transfer-amount" min="1" placeholder="Amount to save">
+                        <button id="transfer-savings-btn" class="btn-small btn-accept" type="button">Transfer savings</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

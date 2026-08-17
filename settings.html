@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | FinSmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SAAS Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">📊 FinSmart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="expenses.html">💳 Expenses</a></li>
+                <li><a href="budgets.html">💰 Budget Rules</a></li>
+                <li><a href="goals.html">🎯 Goals</a></li>
+                <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Settings & Initialization</h1>
+                <p>Configure your monthly allowance and default budget limits.</p>
+            </div>
+
+            <div class="grid-2">
+                <!-- Set Allowance Card -->
+                <div class="card">
+                    <h3>Monthly Allowance</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Set the total amount you have available to spend this month.</p>
+                    <div class="form-group">
+                        <label>Total Allowance (₹)</label>
+                        <input type="number" id="setting-allowance" required min="1">
+                    </div>
+                    <button class="btn-primary" id="save-allowance-btn">Save Allowance</button>
+                </div>
+
+                <!-- Reset Data Card -->
+                <div class="card" style="border: 1px solid var(--danger);">
+                    <h3 style="color: var(--danger);">Start New Month</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Clear all current expenses to start fresh for a new month. Your allowance, goals, and budget rules will be saved.</p>
+                    <button class="btn-primary" style="background-color: var(--danger);" id="reset-expenses-btn">Clear All Expenses</button>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 24px;">
+                <div class="card">
+                    <h3>Shared Household Budget</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Your allowance plus every member's monthly contribution becomes the shared household budget.</p>
+                    <form id="household-member-form" class="compact-form">
+                        <input id="household-member-name" required placeholder="Member name">
+                        <input id="household-member-contribution" required type="number" min="1" placeholder="Monthly contribution (₹)">
+                        <button class="btn-small btn-accept" type="submit">Add member</button>
+                    </form>
+                    <div id="household-member-list" class="simple-list"></div>
+                </div>
+                <!-- Set Category Budgets Card -->
+                <div class="card">
+                    <h3>Configure Budget Limits</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Set the maximum amount you want to spend in each category.</p>
+                    
+                    <form id="settings-budgets-form">
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label>Food Budget (₹)</label>
+                                <input type="number" id="setting-budget-food" required min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Transport Budget (₹)</label>
+                                <input type="number" id="setting-budget-transport" required min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Entertainment Budget (₹)</label>
+                                <input type="number" id="setting-budget-entertainment" required min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Shopping Budget (₹)</label>
+                                <input type="number" id="setting-budget-shopping" required min="1">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Save Budget Rules</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Data & Appearance</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Export a backup, restore a previous backup, or change the theme.</p>
+                    <div class="settings-actions">
+                        <button id="export-data-btn" class="btn-small btn-accept" type="button">Export CSV</button>
+                        <button id="export-backup-btn" class="btn-small btn-reject" type="button">Download backup</button>
+                        <label class="btn-small btn-reject file-button">Import data<input id="import-data-input" type="file" accept="application/json"></label>
+                        <button id="theme-toggle-btn" class="btn-small btn-reject" type="button">Toggle dark mode</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

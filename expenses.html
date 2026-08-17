@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses | FinSmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- SAAS Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">📊 FinSmart</div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Dashboard</a></li>
+                <li><a href="expenses.html" class="active">💳 Expenses</a></li>
+                <li><a href="budgets.html">💰 Budget Rules</a></li>
+                <li><a href="goals.html">🎯 Goals</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Expenses</h1>
+                <p>Track your daily spending and view your transaction history.</p>
+            </div>
+
+            <div class="grid-2">
+                <!-- Add Expense Form -->
+                <div class="card">
+                    <h3>Add New Expense</h3>
+                    <form id="expense-form">
+                        <div class="form-group">
+                            <label>Amount (₹)</label>
+                            <input type="number" id="exp-amount" required min="1" placeholder="e.g. 250">
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="exp-category" required></select>
+                        </div>
+                        <button type="button" id="add-category-btn" class="btn-small btn-reject">+ Custom category</button>
+                        <button type="submit" class="btn-primary">Add Transaction</button>
+                    </form>
+                </div>
+
+                <!-- Expense History Table -->
+                <div class="card">
+                    <h3>Transaction History</h3>
+                    <div class="expense-filters">
+                        <input id="expense-search" type="search" placeholder="Search category">
+                        <select id="expense-filter-category"><option value="">All categories</option></select>
+                        <input id="expense-filter-from" type="date" aria-label="From date">
+                        <input id="expense-filter-to" type="date" aria-label="To date">
+                        <input id="expense-filter-min" type="number" min="0" placeholder="Min ₹">
+                        <input id="expense-filter-max" type="number" min="0" placeholder="Max ₹">
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expense-table-body">
+                                <!-- JS will populate this with LocalStorage data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-2 feature-row">
+                <div class="card">
+                    <h3>Recurring Expenses</h3>
+                    <form id="recurring-form" class="compact-form">
+                        <input id="recurring-name" required placeholder="e.g. Phone recharge">
+                        <input id="recurring-amount" required type="number" min="1" placeholder="Amount">
+                        <select id="recurring-category"></select>
+                        <input id="recurring-day" required type="number" min="1" max="28" value="1" aria-label="Day of month">
+                        <button class="btn-small btn-accept" type="submit">Add recurring</button>
+                    </form>
+                    <div id="recurring-list" class="simple-list"></div>
+                </div>
+                <div class="card">
+                    <h3>Monthly History</h3>
+                    <div id="monthly-history" class="simple-list"></div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

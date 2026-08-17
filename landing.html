@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSmart | Smart Finance Tracker</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">📊 FinSmart</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it Works</a>
+            <a href="index.html" class="btn-nav">Open Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">Rule-Based Intelligence</div>
+            <h1>Master Your Money with <span class="text-gradient">Mathematical Precision</span></h1>
+            <p>Track expenses, automate budgets, and predict your financial future without relying on AI. Pure logic, pure control.</p>
+            <div class="hero-buttons">
+                <a href="index.html" class="btn-primary-large">Start Tracking Free</a>
+                <a href="#features" class="btn-secondary-large">Explore Features</a>
+            </div>
+        </div>
+
+        <!-- Interactive 3D Showcase -->
+        <div class="hero-3d-container" id="scene">
+            <div class="dashboard-mockup" id="mockup">
+                <div class="mockup-header">
+                    <div class="dots"><span></span><span></span><span></span></div>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-card floating-card-1">
+                        <h4>Today's Safe Limit</h4>
+                        <h2>₹350</h2>
+                    </div>
+                    <div class="mockup-card floating-card-2">
+                        <h4>⚠️ Food Budget Alert</h4>
+                        <p>You are at 85% of your limit.</p>
+                    </div>
+                    <div class="mockup-chart">
+                        <div class="bar" style="height: 60%"></div>
+                        <div class="bar" style="height: 80%; background: var(--danger)"></div>
+                        <div class="bar" style="height: 40%"></div>
+                        <div class="bar" style="height: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Floating 3D Orbs -->
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+    </header>
+
+    <script src="landing.js"></script>
+</body>
+</html>
