@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const y = e.clientY - rect.top - (rect.height / 2);
 
         // Define how aggressively it tilts (lower number = more tilt)
-        const tiltFactor = 15;
+        const tiltFactor = 8;
 
         // Calculate rotation degrees based on mouse position
         const rotateY = (x / (rect.width / 2)) * tiltFactor;
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scene.addEventListener('mouseleave', () => {
         // Return to the default isometric view smoothly
         mockup.style.transition = 'transform 0.5s ease-out';
-        mockup.style.transform = 'rotateX(15deg) rotateY(-15deg)';
+        mockup.style.transform = 'rotateX(9deg) rotateY(-9deg)';
     });
 
     // Remove the smooth transition during active mouse movement to prevent lag
