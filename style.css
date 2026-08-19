@@ -425,4 +425,6 @@ body:has(#dash-allowance) .streak-card { background: linear-gradient(135deg, #c2
 @media (max-width: 520px) { .financial-health { padding:20px; }.health-heading { flex-direction:column; gap:10px; }.health-score-row { gap:14px; }.health-status { align-self:flex-start; } }
 
 body:has(#dash-allowance) .streak-card { background: linear-gradient(135deg, #c2410c, #ea580c); }
-
+a{
+    text-decoration: none;
+}
